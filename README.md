@@ -1,0 +1,1 @@
+# rust-maze-solver-benchmark
