@@ -1,0 +1,14 @@
+[package]
+name = "rust-maze-solver-benchmark"
+version = "0.1.0"
+authors = ["Patryk 'PsichiX' Budzynski <psichix@gmail.com>"]
+edition = "2018"
+
+[features]
+raw_result = []
+
+[dependencies]
+clap = "2.33"
+petgraph = "0.5"
+rand = "0.7"
+# rayon = "1.3"
