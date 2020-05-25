@@ -1,0 +1,23 @@
+name: Rust
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: cargo build --release --verbose
+    - name: Build - raw result
+      run: cargo build --release --verbose --features raw_result
+    - name: Run benchmark
+      run: cargo run --release -- -i ./resources/maze.txt -a 10 -s 20 -p 959:175,215:172 -p 661:203,715:108 -t 10
+    - name: Run benchmark - raw result
+      run: cargo run --release --features raw_result -- -i ./resources/maze.txt -a 10 -s 20 -p 959:175,215:172 -p 661:203,715:108 -t 10
